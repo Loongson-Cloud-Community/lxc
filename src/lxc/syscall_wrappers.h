@@ -89,6 +89,8 @@ static inline int memfd_create(const char *name, unsigned int flags) {
 			#if _MIPS_SIM == _MIPS_SIM_ABI64
 				#define __NR_memfd_create 5314
 			#endif
+		#elif defined __loongarch64
+			#define __NR_memfd_create 279
 		#endif
 	#endif
 	#ifdef __NR_memfd_create
@@ -129,6 +131,8 @@ extern int pivot_root(const char *new_root, const char *put_old);
 		#define __NR_setns 350
 	#elif defined(__s390__)
 		#define __NR_setns 339
+	#elif defined(__loongarch64)
+		#define __NR_setns 268
 	#endif
 #endif
 
@@ -199,6 +203,8 @@ struct signalfd_siginfo {
 #define __NR_signalfd4 5283
 #elif __mips__ && _MIPS_SIM == _ABIN32
 #define __NR_signalfd4 6287
+#elif defined __loongarch64
+#define __NR_signalfd4 74
 #endif
 #endif
 
