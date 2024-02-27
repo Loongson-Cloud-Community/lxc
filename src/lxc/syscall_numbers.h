@@ -35,6 +35,8 @@
 		#define __NR_keyctl 280
 	#elif defined __powerpc__
 		#define __NR_keyctl 271
+        #elif defined __loongarch64
+                #define __NR_keyctl 219
 	#elif defined __riscv
 		#define __NR_keyctl 219
 	#elif defined __sparc__
@@ -72,6 +74,8 @@
 		#define __NR_memfd_create 360
 	#elif defined __riscv
 		#define __NR_memfd_create 279
+        #elif defined __loongarch64
+                #define __NR_memfd_create 279
 	#elif defined __sparc__
 		#define __NR_memfd_create 348
 	#elif defined __blackfin__
@@ -107,6 +111,8 @@
 		#define __NR_pivot_root 217
 	#elif defined __powerpc__
 		#define __NR_pivot_root 203
+        #elif defined __loongarch64
+                #define __NR_pivot_root 41
 	#elif defined __riscv
 		#define __NR_pivot_root 41
 	#elif defined __sparc__
@@ -142,6 +148,8 @@
 		#define __NR_setns 339
 	#elif defined __powerpc__
 		#define __NR_setns 350
+        #elif defined __loongarch64
+                #define __NR_setns 268
 	#elif defined __riscv
 		#define __NR_setns 268
 	#elif defined __sparc__
@@ -177,6 +185,8 @@
 		#define __NR_sethostname 74
 	#elif defined __powerpc__
 		#define __NR_sethostname 74
+        #elif defined __loongarch64
+                #define __NR_sethostname 161
 	#elif defined __riscv
 		#define __NR_sethostname 161
 	#elif defined __sparc__
@@ -212,6 +222,8 @@
 		#define __NR_signalfd 316
 	#elif defined __powerpc__
 		#define __NR_signalfd 305
+	#elif defined __loongarch64
+		#define __NR_signalfd 74
 	#elif defined __riscv
 		#define __NR_signalfd 74
 	#elif defined __sparc__
@@ -247,6 +259,8 @@
 		#define __NR_signalfd4 322
 	#elif defined __powerpc__
 		#define __NR_signalfd4 313
+        #elif defined __loongarch64
+                #define __NR_signalfd4 74
 	#elif defined __riscv
 		#define __NR_signalfd4 74
 	#elif defined __sparc__
@@ -282,6 +296,8 @@
 		#define __NR_unshare 303
 	#elif defined __powerpc__
 		#define __NR_unshare 282
+        #elif defined __loongarch64
+                #define __NR_unshare 97
 	#elif defined __riscv
 		#define __NR_unshare 97
 	#elif defined __sparc__
@@ -317,6 +333,8 @@
 		#define __NR_bpf 351
 	#elif defined __powerpc__
 		#define __NR_bpf 361
+        #elif defined __loongarch64
+                #define __NR_bpf 280
 	#elif defined __riscv
 		#define __NR_bpf 280
 	#elif defined __sparc__
@@ -352,6 +370,8 @@
 		#define __NR_faccessat 300
 	#elif defined __powerpc__
 		#define __NR_faccessat 298
+        #elif defined __loongarch64
+                #define __NR_faccessat 48
 	#elif defined __riscv
 		#define __NR_faccessat 48
 	#elif defined __sparc__
@@ -407,6 +427,8 @@
 		#define __NR_seccomp 348
 	#elif defined __powerpc__
 		#define __NR_seccomp 358
+        #elif defined __loongarch64
+                #define __NR_seccomp 277
 	#elif defined __riscv
 		#define __NR_seccomp 277
 	#elif defined __sparc__
@@ -442,6 +464,8 @@
 		#define __NR_gettid 236
 	#elif defined __powerpc__
 		#define __NR_gettid 207
+        #elif defined __loongarch64
+                #define __NR_gettid 178
 	#elif defined __riscv
 		#define __NR_gettid 178
 	#elif defined __sparc__
@@ -481,6 +505,8 @@
 		#define __NR_execveat 354
 	#elif defined __powerpc__
 		#define __NR_execveat 362
+        #elif defined __loongarch64
+                #define __NR_execveat 281
 	#elif defined __riscv
 		#define __NR_execveat 281
 	#elif defined __sparc__

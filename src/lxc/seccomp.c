@@ -314,6 +314,7 @@ enum lxc_hostarch_t {
 	lxc_seccomp_arch_mipsel64n32,
 	lxc_seccomp_arch_s390x,
 	lxc_seccomp_arch_s390,
+	lxc_seccomp_arch_loongarch64,
 	lxc_seccomp_arch_unknown = 999,
 };
 
@@ -348,6 +349,8 @@ int get_hostarch(void)
 		return lxc_seccomp_arch_s390x;
 	else if (strncmp(uts.machine, "s390", 4) == 0)
 		return lxc_seccomp_arch_s390;
+	else if (strncmp(uts.machine, "loongarch64", 11) == 0)
+		return lxc_seccomp_arch_loongarch64;
 	return lxc_seccomp_arch_unknown;
 }
 
@@ -419,6 +422,11 @@ scmp_filter_ctx get_new_ctx(enum lxc_hostarch_t n_arch,
 #ifdef SCMP_ARCH_S390
 	case lxc_seccomp_arch_s390:
 		arch = SCMP_ARCH_S390;
+		break;
+#endif
+#ifdef SCMP_ARCH_LOONGARCH64
+	case lxc_seccomp_arch_loongarch64:
+		arch = SCMP_ARCH_LOONGARCH64;
 		break;
 #endif
 	default:
@@ -929,6 +937,17 @@ static int parse_config_v2(FILE *f, char *line, size_t *line_bufsz, struct lxc_c
 				}
 
 				cur_rule_arch = lxc_seccomp_arch_s390;
+			}
+#endif
+#ifdef SCMP_ARCH_LOONGARCH64
+			else if (strcmp(line, "[loongarch64]") == 0 ||
+			        strcmp(line, "[LOONGARCH64]") == 0) {
+				if (native_arch != lxc_seccomp_arch_loongarch64) {
+					cur_rule_arch = lxc_seccomp_arch_unknown;
+					continue;
+				}
+
+				cur_rule_arch = lxc_seccomp_arch_loongarch64;
 			}
 #endif
 			else {

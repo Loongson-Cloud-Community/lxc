@@ -2969,6 +2969,7 @@ signed long lxc_config_parse_arch(const char *arch)
 	    { "powerpc64", PER_LINUX   },
 	    { "s390x",     PER_LINUX   },
 	    { "x86_64",    PER_LINUX   },
+	    { "loongarch64", PER_LINUX   },
 	};
 	size_t len = sizeof(pername) / sizeof(pername[0]);
 
